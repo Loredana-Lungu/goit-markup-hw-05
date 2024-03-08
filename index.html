@@ -48,12 +48,20 @@
             </div>
     
             <div class="hero-button">
-            <button type="button" class="button-service">Order Service</button>
+            <button type="button" class="button-service" data-modal-open>Order Service</button>
             </div>
+            </div>
+
+            <div class="modal is-hidden" data-modal>
+                <div class="modal-content">
+                    <button class="close-btn" data-modal-close>&times;</button>
+                    Continut modal
+                </div>
             </div>
         </section>
 
-                    <!-- 'Features' section -->
+             
+        <!-- 'Features' section -->
         <section class="section features-section">
                  <div class="container features">
             <ul>
@@ -314,8 +322,7 @@
                 </div>
             </div>
             </div>
-
-        </section>
+            </section>
 
         <!-- 'footer' section -->
         <footer class="section footer-section">
@@ -356,5 +363,6 @@
         </footer>
 
     </main>
+        <script src="./js/modal.js"></script>
 </body>
 </html>
