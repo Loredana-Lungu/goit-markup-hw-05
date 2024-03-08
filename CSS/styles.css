@@ -11,7 +11,7 @@
   --social-media-icons-bg-color: rgba(77, 90, 229, 1);
   --clients-icons-color: rgba(142, 143, 153, 1);
   --modal-color-diary: rgba(252, 252, 252, 1);
-  --transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 * {
@@ -35,17 +35,24 @@
   font-weight: 800;
 }
 
-.nav-menu a {
+.nav-bar a {
   font-weight: 500;
   color: var(--primary-color);
 }
 
-.nav-menu:hover {
+.nav-bar:hover {
   cursor: pointer;
 }
 
 a:hover {
   color: var(--logo-web-color);
+  transition: color var(--transition);
+}
+
+a.active:hover {
+  border-bottom: 4px solid var(--logo-web-color);
+  border-radius: 2px;
+  padding-bottom: 20px;
 }
 
 h1 {
@@ -122,6 +129,7 @@ a {
   border: 1px;
   border-color: rgba(231, 233, 252, 1);
   border-radius: 4px;
+  padding: 12px 24px;
 }
 
 .button:hover {
@@ -130,6 +138,7 @@ a {
   cursor: pointer;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.12),
     0px 2px 1px 0px rgba(0, 0, 0, 0.08), 0px 3px 1px 0px rgba(0, 0, 0, 0.1);
+  transition: background-color var(--transition);
 }
 
 .container {
@@ -368,7 +377,7 @@ header {
 .icons:focus {
   background-color: var(--logo-web-color);
   fill: white;
-  transition: background-color, color var(--transition);
+  transition: background-color var(--transition);
 }
 
 .social-media-footer {
@@ -406,6 +415,7 @@ header {
   border-color: var(--logo-web-color);
   fill: var(--logo-web-color);
   cursor: pointer;
+  transition: fill var(--transition);
 }
 
 .icons-clients svg {
@@ -415,6 +425,7 @@ header {
 
 .is-hidden {
   visibility: hidden;
+  transform: scale(1.1);
 }
 
 .modal {
@@ -430,17 +441,19 @@ header {
   box-shadow: 0px 2px 1px 0px rgba(0, 0, 0, 0.2),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12), 0px 1px 1px 0px rgba(0, 0, 0, 0.14);
   background-color: rgba(46, 47, 66, 0.4);
-  opacity: 0.7;
-  transition: var(--transition);
+  opacity: 1;
+  transition: transform var(--transition);
 }
 
 .modal-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 16px;
   background-color: var(--modal-color-diary);
   width: 400px;
   height: 580px;
   position: relative;
-  opacity: 1;
 }
 
 .close-btn {
@@ -459,11 +472,11 @@ header {
   align-items: center;
   position: absolute;
   top: 0;
-  width: 360px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   background-color: var(--logo-web-color);
-  transform: translatey(100%);
-  transition: var(--transition);
+  transform: translatey(101%);
+  transition: transform var(--transition);
 }
 
 .card:hover .overlay {
@@ -474,4 +487,10 @@ header {
   color: var(--cloud-color);
   margin: 40px 32px 64px 32px;
   font-size: 16px;
+}
+
+.img-overlay {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
 }
