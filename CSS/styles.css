@@ -49,7 +49,7 @@ a:hover {
   transition: color var(--transition);
 }
 
-a.active:hover {
+a.active {
   border-bottom: 4px solid var(--logo-web-color);
   border-radius: 2px;
   padding-bottom: 20px;
